@@ -1,11 +1,12 @@
 from flask import Flask, render_template, request, url_for, redirect
 from flask_mysqldb import MySQL
+from settings import password
 import MySQLdb.cursors
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = ""
 app.config['MYSQL_DB'] = "todoapp"
-app.config['MYSQL_PASSWORD'] = "Post0lach123"
+app.config['MYSQL_PASSWORD'] = password
 app.config['MYSQL_USER'] = "root"
 app.config['MYSQL_HOST'] = "localhost"
 app.config['MYSQL_CURSORCLASS'] = "DictCursor"
