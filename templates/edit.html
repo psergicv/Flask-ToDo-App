@@ -3,5 +3,9 @@
 {% block title %} ToDo App - Main Page {% endblock %}
 
 {% block content %}
-
+<form action="" method="POST">
+    <input type="text" id="title" name="title" value="{{old_data['title']}}" required>
+    <input type="text" id="message" name="message" value="{{old_data['message']}}" required>
+    <input type="submit" value="SAVE">
+</form>
 {% endblock %}
