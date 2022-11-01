@@ -5,7 +5,7 @@
 {% block content %}
 
 {% for msg in post %}
-    <p>{{msg['id']}} - {{msg['title']}}</p>
+    <p><a href="/{{msg['id']}}">{{msg['id']}} - {{msg['title']}}</a></p>
 {% endfor %}
 
 {% endblock %}

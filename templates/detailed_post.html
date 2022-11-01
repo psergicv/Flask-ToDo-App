@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block title %} Detailed Page {% endblock %}
+
+{% block content %}
+    <h1>{{detailed_post['title']}}</h1>
+    <p>{{detailed_post['message']}}</p>
+    <br>
+    <button type="submit">Edit</button>
+    <button type="submit">Delete</button>
+{% endblock %}

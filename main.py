@@ -5,7 +5,7 @@ import MySQLdb.cursors
 app = Flask(__name__)
 app.config['SECRET_KEY'] = ""
 app.config['MYSQL_DB'] = "todoapp"
-app.config['MYSQL_PASSWORD'] = ""
+app.config['MYSQL_PASSWORD'] = "Post0lach123"
 app.config['MYSQL_USER'] = "root"
 app.config['MYSQL_HOST'] = "localhost"
 app.config['MYSQL_CURSORCLASS'] = "DictCursor"
@@ -34,7 +34,10 @@ def create():
 
 @app.route('/<int:post_id>')
 def post(post_id):
-    pass
+    conn = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+    conn.execute("SELECT title, message FROM posts WHERE id = %s", (post_id,))
+    detailed_post = conn.fetchone()
+    return render_template("detailed_post.html", detailed_post=detailed_post)
 
 
 @app.route('/<int:post_id>/edit', methods=['GET', 'POST'])
