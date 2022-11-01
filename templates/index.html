@@ -1,7 +1,11 @@
 {% extends 'base.html' %}
 
-{% block title %} ToDo App - Main Page {% end block %}
+{% block title %} ToDo App - Main Page {% endblock %}
 
 {% block content %}
+
+{% for msg in post %}
+    <p>{{msg['id']}} - {{msg['title']}}</p>
+{% endfor %}
 
 {% endblock %}
